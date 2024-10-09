@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
+    /**
+     * Repository get all Blogs
+     * @return Blog list
+     */
     @Query(value = "SELECT * FROM blog", nativeQuery = true)
     ArrayList<Blog> getAllBlogs();
 }

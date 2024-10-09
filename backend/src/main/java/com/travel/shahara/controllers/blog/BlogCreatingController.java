@@ -1,5 +1,6 @@
 package com.travel.shahara.controllers.blog;
 
+import com.travel.shahara.exceptions.ShaException;
 import com.travel.shahara.models.formDto.BlogCreatingForm;
 import com.travel.shahara.models.responseDto.BlogCreatingResponseDto;
 import com.travel.shahara.models.serviceInputDto.BlogCreatingServiceInputDto;
@@ -16,13 +17,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/blog/create")
+@RequestMapping("/blog")
 public class BlogCreatingController {
     @Autowired
     private BlogCreatingService blogCreatingService;
 
-    @PostMapping
-    public BlogCreatingResponseDto createBlog(@RequestBody BlogCreatingForm blogCreatingForm) {
+    /**
+     * Create new Blog
+     * @param blogCreatingForm Request body of API
+     * @return Created Blog
+     */
+    @PostMapping("/create")
+    public BlogCreatingResponseDto createBlog(@RequestBody BlogCreatingForm blogCreatingForm) throws ShaException {
 
         BlogCreatingServiceInputDto blogCreatingServiceInputDto =
                 BlogCreatingServiceInputDto.builder()

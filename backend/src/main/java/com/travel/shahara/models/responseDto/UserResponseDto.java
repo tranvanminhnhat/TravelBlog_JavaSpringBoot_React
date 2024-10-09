@@ -6,5 +6,8 @@ import lombok.Data;
 @Builder
 @Data
 public class UserResponseDto {
+    /**
+     * Username
+     */
     private String username;
 }

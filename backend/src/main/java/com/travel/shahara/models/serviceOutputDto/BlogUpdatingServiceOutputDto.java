@@ -1,11 +1,11 @@
-package com.travel.shahara.models.responseDto;
+package com.travel.shahara.models.serviceOutputDto;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
-public class BlogCreatingResponseDto {
+public class BlogUpdatingServiceOutputDto {
 
     /**
      * Blog ID

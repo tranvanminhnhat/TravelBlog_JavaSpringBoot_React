@@ -6,5 +6,8 @@ import lombok.Data;
 @Data
 @Builder
 public class UserServiceOutputDto {
+    /**
+     * Username
+     */
     private String username;
 }

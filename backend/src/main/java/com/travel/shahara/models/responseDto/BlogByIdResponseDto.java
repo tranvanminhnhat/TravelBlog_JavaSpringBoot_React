@@ -7,5 +7,8 @@ import lombok.Data;
 @Builder
 @Data
 public class BlogByIdResponseDto {
+    /**
+     * Blog
+     */
     private Blog blog;
 }

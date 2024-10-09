@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Builder
 @Data
-public class BlogCreatingResponseDto {
+public class BlogUpdatingResponseDto {
 
     /**
      * Blog ID

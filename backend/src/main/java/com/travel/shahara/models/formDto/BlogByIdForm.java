@@ -6,5 +6,8 @@ import lombok.Data;
 @Builder
 @Data
 public class BlogByIdForm {
+    /**
+     * Blog ID
+     */
     private Integer blogId;
 }

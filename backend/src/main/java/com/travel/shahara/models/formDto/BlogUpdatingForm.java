@@ -1,12 +1,11 @@
-package com.travel.shahara.models.responseDto;
+package com.travel.shahara.models.formDto;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Builder
 @Data
-public class BlogCreatingResponseDto {
-
+public class BlogUpdatingForm {
     /**
      * Blog ID
      */

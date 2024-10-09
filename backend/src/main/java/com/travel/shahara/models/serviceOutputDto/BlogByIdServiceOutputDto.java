@@ -7,5 +7,9 @@ import lombok.Data;
 @Data
 @Builder
 public class BlogByIdServiceOutputDto {
+
+    /**
+     * Blog object
+     */
     private Blog blog;
 }

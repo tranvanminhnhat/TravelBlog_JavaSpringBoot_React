@@ -8,8 +8,15 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class UserPrincipal implements UserDetails {
+    /**
+     * USer
+     */
     private Users user;
 
+    /**
+     * Constructor of user
+     * @param user User
+     */
     public UserPrincipal(Users user) {
         this.user = user;
     }

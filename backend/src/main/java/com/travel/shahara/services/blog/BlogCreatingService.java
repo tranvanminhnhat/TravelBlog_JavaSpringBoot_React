@@ -15,6 +15,11 @@ public class BlogCreatingService {
     @Autowired
     private BlogRepository blogRepository;
 
+    /**
+     * Create new Blog
+     * @param blogCreatingServiceInputDto Input DTO of service
+     * @return Created Blog
+     */
     public BlogCreatingServiceOutputDto createNewBlog(BlogCreatingServiceInputDto blogCreatingServiceInputDto) {
         Blog blog = new Blog();
         BeanUtils.copyProperties(blogCreatingServiceInputDto, blog);

@@ -14,6 +14,10 @@ public class BlogListService {
     @Autowired
     private BlogRepository blogRepository;
 
+    /**
+     * Get all Blogs
+     * @return Blog list
+     */
     public List<Blog> getAllBlogs() {
         return blogRepository.getAllBlogs();
     }

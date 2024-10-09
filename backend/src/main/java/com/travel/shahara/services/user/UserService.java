@@ -18,6 +18,11 @@ public class UserService {
 
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
+    /**
+     * Register new User
+     * @param userServiceInputDto Input DTO of service
+     * @return Username
+     */
     public UserServiceOutputDto registerUser(UserServiceInputDto userServiceInputDto) {
         Users user = new Users();
         BeanUtils.copyProperties(userServiceInputDto, user);
