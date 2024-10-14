@@ -6,10 +6,6 @@ import lombok.Data;
 @Builder
 @Data
 public class BlogCreatingForm {
-    /**
-     * Blog ID
-     */
-    private Integer blogId;
 
     /**
      * Blog title

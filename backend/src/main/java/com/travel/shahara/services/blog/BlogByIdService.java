@@ -21,10 +21,6 @@ public class BlogByIdService {
      */
     public BlogByIdServiceOutputDto getBlogById(BlogByIdServiceInputDto blogByIdServiceInputDto) throws ShaException {
         Blog blog = blogRepository.findById(blogByIdServiceInputDto.getBlogId()).orElse(null);
-
-        if (blog == null) {
-            throw ShaException.builder().code("0001").message("Blog not found").build();
-        }
         return BlogByIdServiceOutputDto.builder().blog(blog).build();
     }
 }

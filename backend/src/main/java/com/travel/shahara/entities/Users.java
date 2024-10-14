@@ -1,6 +1,8 @@
 package com.travel.shahara.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
@@ -9,6 +11,7 @@ public class Users {
      * User ID
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     /**
@@ -20,6 +23,11 @@ public class Users {
      * Password
      */
     private String password;
+
+    /**
+     * Email
+     */
+    private String email;
 
     /**
      * Getter ID
@@ -67,5 +75,21 @@ public class Users {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Getter Email
+     * @return Email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Setter Email
+     * @param email Email
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

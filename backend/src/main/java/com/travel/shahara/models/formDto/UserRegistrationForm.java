@@ -8,20 +8,21 @@ import lombok.Data;
 @Builder
 @Data
 public class UserRegistrationForm {
-    /**
-     * User ID
-     */
-    private Integer id;
 
     /**
      * Username
      */
-    @Username
+//    @Username
     private String username;
 
     /**
      * Password
      */
-    @Password
+//    @Password
     private String password;
+
+    /**
+     * Email
+     */
+    private String email;
 }

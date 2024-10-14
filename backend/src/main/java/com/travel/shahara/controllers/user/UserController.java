@@ -1,4 +1,4 @@
-package com.travel.shahara.controllers;
+package com.travel.shahara.controllers.user;
 
 import com.travel.shahara.exceptions.ShaException;
 import com.travel.shahara.models.formDto.UserRegistrationForm;
@@ -6,7 +6,6 @@ import com.travel.shahara.models.responseDto.UserResponseDto;
 import com.travel.shahara.models.serviceInputDto.UserServiceInputDto;
 import com.travel.shahara.models.serviceOutputDto.UserServiceOutputDto;
 import com.travel.shahara.services.user.UserService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -30,7 +29,10 @@ public class UserController {
     @PostMapping("/register")
     public UserResponseDto registerUser(@Validated @RequestBody UserRegistrationForm user) throws ShaException {
 
-        UserServiceInputDto inputDto = UserServiceInputDto.builder().id(user.getId()).username(user.getUsername()).password(user.getPassword()).password(user.getPassword()).build();
+        UserServiceInputDto inputDto = UserServiceInputDto.builder()
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .email(user.getEmail()).build();
         UserServiceOutputDto outputDto = userService.registerUser(inputDto);
 
         UserResponseDto  responseDto = UserResponseDto.builder().username(outputDto.getUsername()).build();

@@ -20,4 +20,9 @@ public class UserServiceInputDto {
      * Password
      */
     private String password;
+
+    /**
+     * Email
+     */
+    private String email;
 }

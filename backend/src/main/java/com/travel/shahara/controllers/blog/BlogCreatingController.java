@@ -6,11 +6,7 @@ import com.travel.shahara.models.responseDto.BlogCreatingResponseDto;
 import com.travel.shahara.models.serviceInputDto.BlogCreatingServiceInputDto;
 import com.travel.shahara.models.serviceOutputDto.BlogCreatingServiceOutputDto;
 import com.travel.shahara.services.blog.BlogCreatingService;
-import com.travel.shahara.services.blog.BlogListService;
-import jakarta.validation.constraints.NotNull;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,15 +20,14 @@ public class BlogCreatingController {
 
     /**
      * Create new Blog
+     *
      * @param blogCreatingForm Request body of API
      * @return Created Blog
      */
     @PostMapping("/create")
     public BlogCreatingResponseDto createBlog(@RequestBody BlogCreatingForm blogCreatingForm) throws ShaException {
 
-        BlogCreatingServiceInputDto blogCreatingServiceInputDto =
-                BlogCreatingServiceInputDto.builder()
-                .blogId(blogCreatingForm.getBlogId())
+        BlogCreatingServiceInputDto blogCreatingServiceInputDto = BlogCreatingServiceInputDto.builder()
                 .blogTitle(blogCreatingForm.getBlogTitle())
                 .blogContent(blogCreatingForm.getBlogContent())
                 .blogDescription(blogCreatingForm.getBlogDescription())
@@ -41,12 +36,6 @@ public class BlogCreatingController {
 
         BlogCreatingServiceOutputDto blogCreatingServiceOutputDto = blogCreatingService.createNewBlog(blogCreatingServiceInputDto);
 
-        return BlogCreatingResponseDto.builder()
-                .blogId(blogCreatingServiceOutputDto.getBlogId())
-                .blogTitle(blogCreatingServiceOutputDto.getBlogTitle())
-                .blogContent(blogCreatingServiceOutputDto.getBlogContent())
-                .blogDescription(blogCreatingServiceOutputDto.getBlogDescription())
-                .blogAuthor(blogCreatingServiceOutputDto.getBlogAuthor())
-                .build();
+        return BlogCreatingResponseDto.builder().blogId(blogCreatingServiceOutputDto.getBlogId()).blogTitle(blogCreatingServiceOutputDto.getBlogTitle()).blogContent(blogCreatingServiceOutputDto.getBlogContent()).blogDescription(blogCreatingServiceOutputDto.getBlogDescription()).blogAuthor(blogCreatingServiceOutputDto.getBlogAuthor()).build();
     }
 }
